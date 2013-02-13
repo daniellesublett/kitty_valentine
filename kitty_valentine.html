@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>Ermegerd! Verlernterns!</title>
+  <link href="kitty_valentine.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <a href="javascript:var t=setInterval('animBall()', 80)">Start Animation</a> <a href="javascript:clearInterval(t);">Stop Animation</a>  
+ 	<img src="http://singthistune.com/wp-content/uploads/2010/02/SparklyHearts.gif" style="position:absolute;left:10px;top:200px;" id="sinnie" />
+  <img id="sinnieleft"style="position:absolute;left: 900px; top: 200px;" src="sinnie_left.jpg">
+  <img id="kittenheart"style="position:absolute;left: 520px; top: 380px;" src="http://www.jhocy.com/images/uploads/a79ef3bf1d9058cc57656284652a4f49.gif">
+  <img id="sinnieright"style="position:absolute;left: 300px; top: 200px;" src="sinnie_right.jpg">
+  <img id ="kitties"style ="position:absolute;left:520px; top:160px;" src="cats_above.jpg">
+  <h1><img id="sparkleheart2"style="position:absolute;left: 900px; top: 380px;" src="http://singthistune.com/wp-content/uploads/2010/02/SparklyHearts.gif"></h1>
+   <h1><img id="sparkleheart3"style="position:absolute;left: 300px; top: 380px;" src="http://singthistune.com/wp-content/uploads/2010/02/SparklyHearts.gif"></h1>
+   <!--<img id="sinnieA"style = "position:absolute; left:30px; top:200px;" src="sinnie.jpg">-->
+ <div class="special"><h1>SO ROMANTIC! SO FUZZY!</h1></div>
+ <h1 style="position:absolute;top:200px;">HAPPY VALENTIMES DAY!</h1>
+ 
+
+
+
+  <script>
+  
+  
+  /*function catWalk() {
+    var currentLeft = parseInt(sinnie.style.left);
+    sinnie.style.left = (currentLeft + 10) + 'px';
+    if (currentLeft > (window.innerWidth-sinnie.width)) {
+      sinnie.style.left = '0px';
+    }
+  }*/
+  
+
+  
+ /* var sinnieA = document.getElementById('sinnieA');
+  sinnieA.style.left = '0px';
+  function catWalk() {
+    var currentLeft = parseInt(sinnieA.style.left);
+    sinnieA.style.left = (currentLeft + 10) + 'px';
+    if (currentLeft > (window.innerWidth-sinnieA.width)) {
+      sinnieA.style.left = '0px';
+    }
+  }
+  window.setInterval(catWalk, 50);*/
+  
+  
+  	var dirx = 1; 
+  	var diry = 10; 
+  	var spdx = setRand(); 
+  	var spdy = setRand(); 
+  	var imgLeftInt; 
+  	var imgTopInt; 
+  	var imgHeight; 
+  	var imgWidth; 
+  	var winWidth; 
+  	var winHeight; 
+  	var t; 
+  	 
+  	function animBall(on) {               
+  	    imgLeftInt = parseInt(document.images['sinnie'].style.left); 
+  	    imgTopInt = parseInt(document.images['sinnie'].style.top); 
+  	    imgHeight =  parseInt(document.images['sinnie'].height); 
+  	    imgWidth =  parseInt(document.images['sinnie'].width); 
+  	    winWidth = parseInt(computeWin().windWidth); 
+  	    winHeight = parseInt(computeWin().windHeight); 
+  	 
+  	    if(dirx == 1){                            // if I should go right... 
+  	        goRight(); 
+  	    } else {                                     // otherwise, I'd better go left! 
+  	        goLeft(); 
+  	    } 
+  	 
+  	    if(diry == 1) {                             // if I should go down... 
+  	        goDown();  
+  	    } else {                                              // otherwise, I'll go up! 
+  	        goUp(); 
+  	    } 
+  	 
+  	} 
+  	 
+  	function goRight() { 
+  	    document.images['sinnie'].style.left = imgLeftInt+spdx +"px"; 
+  	    if (imgLeftInt >  (winWidth-imgWidth)){ 
+  	        dirx = 0; 
+  	        spdx= setRand(); 
+  	    } 
+  	} 
+  	 
+  	function goLeft() { 
+  	    document.images['sinnie'].style.left = (imgLeftInt-spdx) +"px"; 
+  	    if (imgLeftInt <  5){ 
+  	        dirx = 1; 
+  	        spdx= setRand(); 
+  	    } 
+  	} 
+  	 
+  	function goDown() { 
+  	    document.images['sinnie'].style.top = imgTopInt+spdy+"px"; 
+  	    if (imgTopInt >  (winHeight-imgHeight)){ 
+  	        diry = 10; 
+  	        spdy= setRand(); 
+  	    } 
+  	} 
+  	 
+  	function goUp() { 
+  	    document.images['sinnie'].style.top = (imgTopInt-spdy) +"px"; 
+  	    if (imgTopInt < 5){ 
+  	        diry = 1; 
+  	        spdy= setRand(); 
+  	    } 
+  	} 
+  	 
+  	function setRand() { 
+  	    randnum= Math.floor(Math.random()*6)+2; 
+  	    return randnum; 
+  	} 
+  	 
+  	function computeWin(){ 
+  	    if(document.body.clientWidth) { 
+  	        this.windWidth=document.body.clientWidth; 
+  	        this.windHeight=document.body.clientHeight; 
+  	    } else { 
+  	        this.windWidth = window.innerWidth; 
+  	        this.windHeight=document.innerHeight; 
+  	    } 
+  	return this; 
+  	}
+
+  </script>
+  
+ </body>
+</html>
+
