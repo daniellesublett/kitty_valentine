@@ -118,13 +118,9 @@
   	} 
   	 
   	function computeWin(){ 
-  	    if(document.body.clientWidth) { 
-  	        this.windWidth=document.body.clientWidth; 
-  	        this.windHeight=document.body.clientHeight; 
-  	    } else { 
+  	    
   	        this.windWidth = window.innerWidth; 
-  	        this.windHeight=document.innerHeight; 
-  	    } 
+  	        this.windHeight=window.innerHeight; 
   	return this; 
   	}
 
